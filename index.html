@@ -1,0 +1,91 @@
+<!doctype html>
+<!--
+  Landing page for the Pages site root.
+
+  Its only job is to stop the root URL from returning 404. A reviewer handed
+  .../privacy-policy.html will sometimes trim the path to see what the site is,
+  and a 404 there invites doubt about whether the policy URL is really live.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Hub — Legal</title>
+    <style>
+      :root {
+        --ink: #2a2822;
+        --ink-soft: #5b574c;
+        --surface: #f4f3ee;
+        --card: #ffffff;
+        --accent: #c15f3c;
+        --rule: rgb(42 40 34 / 0.1);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f5f3ec;
+          --ink-soft: #b8b3a6;
+          --surface: #262624;
+          --card: #30302e;
+          --accent: #d5825f;
+          --rule: rgb(255 255 255 / 0.12);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1.25rem;
+        background: var(--surface);
+        color: var(--ink);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        width: 100%;
+        max-width: 30rem;
+        background: var(--card);
+        border-radius: 1.25rem;
+        padding: 2rem 1.75rem 2.25rem;
+        box-shadow: 0 0 0 1px var(--rule), 0 6px 24px -8px rgb(0 0 0 / 0.12);
+      }
+      h1 { font-size: 1.5rem; margin: 0 0 0.15rem; letter-spacing: -0.02em; }
+      .tag { color: var(--ink-soft); font-size: 0.9rem; margin: 0 0 1.5rem; }
+      ul { list-style: none; margin: 0; padding: 0; }
+      li { border-top: 1px solid var(--rule); }
+      a { display: block; padding: 0.9rem 0; color: var(--accent); font-weight: 600; text-decoration: none; }
+      a:hover { text-decoration: underline; text-underline-offset: 2px; }
+      a span { display: block; color: var(--ink-soft); font-weight: 400; font-size: 0.875rem; margin-top: 0.1rem; }
+      footer { margin-top: 1.75rem; color: var(--ink-soft); font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AI Hub</h1>
+      <p class="tag">All AI. One Place. — legal &amp; account pages</p>
+      <ul>
+        <li>
+          <a href="./privacy-policy.html">
+            Privacy Policy
+            <span>What the app stores, what leaves your device, what it never collects.</span>
+          </a>
+        </li>
+        <li>
+          <a href="./delete-account.html">
+            Delete your account
+            <span>How to remove your account and all of its data.</span>
+          </a>
+        </li>
+      </ul>
+      <footer>
+        Questions: <a
+          style="display:inline;padding:0;font-weight:600"
+          href="mailto:getaihubapp@gmail.com"
+          >getaihubapp@gmail.com</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>

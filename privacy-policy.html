@@ -1,0 +1,258 @@
+<!doctype html>
+<!--
+  Standalone privacy policy page. No build step, no external assets, no fonts or
+  scripts fetched from anywhere — open it, or drop it on GitHub Pages, and it
+  works. That matters because the Play Console needs a URL that resolves to a
+  readable policy, and a page that depends on a CDN is a page that can break.
+
+  privacy-policy.md in this folder is the SOURCE OF TRUTH. If you change wording,
+  change it there first and mirror it here, or the two will drift and the
+  published one will be the stale one.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Hub — Privacy Policy</title>
+    <style>
+      :root {
+        --ink: #2a2822;
+        --ink-soft: #5b574c;
+        --surface: #f4f3ee;
+        --card: #ffffff;
+        --accent: #c15f3c;
+        --rule: rgb(42 40 34 / 0.1);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #f5f3ec;
+          --ink-soft: #b8b3a6;
+          --surface: #262624;
+          --card: #30302e;
+          --accent: #d5825f;
+          --rule: rgb(255 255 255 / 0.12);
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 2rem 1.25rem 4rem;
+        background: var(--surface);
+        color: var(--ink);
+        font: 16px/1.65 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        -webkit-text-size-adjust: 100%;
+      }
+      main {
+        max-width: 44rem;
+        margin: 0 auto;
+        background: var(--card);
+        border-radius: 1.25rem;
+        padding: 2rem 1.75rem 2.5rem;
+        box-shadow: 0 0 0 1px var(--rule), 0 6px 24px -8px rgb(0 0 0 / 0.12);
+      }
+      h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 0.25rem; letter-spacing: -0.02em; }
+      h2 {
+        font-size: 1.1rem;
+        margin: 2.25rem 0 0.6rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--rule);
+        letter-spacing: -0.01em;
+      }
+      h2:first-of-type { border-top: 0; padding-top: 0; }
+      .updated { color: var(--ink-soft); font-size: 0.875rem; margin: 0 0 1.5rem; }
+      .lede { font-size: 1.02rem; }
+      p, li { color: var(--ink); }
+      ul { padding-left: 1.25rem; }
+      li { margin: 0.35rem 0; }
+      a { color: var(--accent); text-underline-offset: 2px; }
+      strong { font-weight: 650; }
+      code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.9em;
+        background: var(--surface);
+        padding: 0.1em 0.35em;
+        border-radius: 0.3em;
+      }
+      footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.875rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>AI Hub — Privacy Policy</h1>
+      <p class="updated">Last updated: 27 July 2026</p>
+
+      <p class="lede">
+        AI Hub is a "bring your own key" AI client. You connect your own AI provider
+        accounts, and the app talks to those providers directly from your phone. This
+        policy describes exactly what the app does with your data.
+      </p>
+      <p class="lede">
+        <strong>The short version:</strong> your conversations and your API keys stay on
+        your device. The only personal information that leaves it is what is needed to
+        sign you in.
+      </p>
+
+      <h2>1. What stays on your device</h2>
+      <p>
+        All of the following is stored <strong>only</strong> in AI Hub's private storage
+        on your phone. It is not uploaded to us, and we have no server that could
+        receive it:
+      </p>
+      <ul>
+        <li>Conversations, messages and their attachments</li>
+        <li>Projects, prompts, agents and knowledge snippets</li>
+        <li>Documents you import into Knowledge (read on-device; never uploaded)</li>
+        <li>
+          Provider connections and settings, usage and cost records, connection-health
+          results, custom instructions, appearance and profile preferences
+        </li>
+      </ul>
+      <p>
+        <strong>API keys.</strong> Your provider API keys are encrypted on your device
+        with AES-GCM, under a key held in your device's browser keystore that is marked
+        <strong>non-extractable</strong> — it cannot be read out of the device by the app
+        or by us. The keys are never transmitted anywhere except to the provider they
+        belong to, when you send a request to that provider.
+      </p>
+      <p>
+        <strong>Automatic cloud backup is switched off.</strong> Android's Auto Backup
+        would otherwise copy the app's data directory to your Google Drive. AI Hub
+        disables it — cloud backup and device-to-device transfer are both excluded — so
+        your conversations and your encrypted keys are not copied off the device by the
+        operating system.
+      </p>
+      <p>
+        Uninstalling AI Hub deletes all of it, including your sign-in session.
+        Reinstalling gives you a fresh, empty app and requires you to sign in again.
+      </p>
+
+      <h2>2. What leaves your device</h2>
+      <p>
+        <strong>Signing in.</strong> AI Hub uses Google Firebase Authentication. When you
+        create an account or sign in, your <strong>email address</strong> is processed by
+        Firebase, which issues an account identifier (UID) and a session token. If you
+        use "Continue with Google", Google likewise processes your sign-in. This is the
+        only personal data the app sends for its own operation. It is used solely to
+        authenticate you and to keep each account's data separate on the device.
+        Firebase's handling of it is covered by
+        <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
+      </p>
+      <p>
+        <strong>Talking to AI providers.</strong> When you send a message, it goes
+        <strong>directly from your phone to the provider you chose</strong> (for example
+        OpenAI, Anthropic, Google, Groq, or a local server you run yourself),
+        authenticated with your own API key. It does not pass through any server of ours.
+        What that provider does with your prompt is governed by
+        <strong>your agreement with them</strong>, not by this policy — including whether
+        they retain it or use it for training. Please read the privacy policy of each
+        provider whose key you add.
+      </p>
+      <p>
+        If you enable web search, your search query is sent in the same direct way to the
+        search provider whose key you supplied.
+      </p>
+      <p>
+        <strong>Nothing else.</strong> AI Hub contains <strong>no analytics, tracking,
+        advertising or crash-reporting SDK</strong>. We do not collect usage statistics,
+        device identifiers, or any record of what you ask the AI.
+      </p>
+      <p>
+        The app also loads no content from third-party servers as it runs. Its fonts and
+        images are bundled inside the app, so simply opening AI Hub contacts nobody —
+        network requests happen only when you sign in, send a message, or run a search.
+        Links to provider documentation open in your browser, and only when you tap them.
+      </p>
+
+      <h2>3. Backups you create yourself</h2>
+      <p>
+        Settings → Backup &amp; restore writes a backup file to your device's Documents
+        folder (or wherever you choose to share it). You control that file. Two things to
+        know:
+      </p>
+      <ul>
+        <li>
+          It <strong>excludes your API keys entirely</strong>, by design, so a backup file
+          cannot be used to spend money on your accounts.
+        </li>
+        <li>
+          It is <strong>plain, unencrypted JSON and contains your conversations</strong>.
+          Treat it like any other personal document: if you copy it to cloud storage or
+          send it to someone, they can read your chats.
+        </li>
+      </ul>
+
+      <h2>4. Bug reports</h2>
+      <p>
+        If you file a bug report from the app, AI Hub pre-fills only the app version,
+        platform, and the model, provider name and error message from the most recent
+        failure. It deliberately <strong>excludes your conversation content and anything
+        key-related</strong>. Nothing is sent until you choose to send it, and you can
+        edit the text first.
+      </p>
+
+      <h2>5. Children</h2>
+      <p>
+        AI Hub is not directed at children under 13, and we do not knowingly collect
+        personal information from them.
+      </p>
+
+      <h2>6. Your control and your rights</h2>
+      <ul>
+        <li>
+          <strong>Delete your content</strong>: clear individual chats, or use Settings to
+          clear all chats. Uninstalling the app removes everything stored on the device.
+        </li>
+        <li>
+          <strong>Delete your account, in the app</strong>: Settings → Account →
+          <strong>Delete account and all data</strong>. This deletes your Firebase account
+          and its email address, and at the same time erases that account's conversations,
+          projects, prompts, agents, knowledge snippets and saved API keys from the device.
+          You confirm by typing DELETE and re-entering your password (or re-confirming with
+          Google). It takes effect immediately and <strong>cannot be undone</strong> —
+          nothing is held on a server that could be restored, so make a backup first if you
+          want to keep your chats.
+        </li>
+        <li>
+          <strong>Delete your account by email</strong>: write to the address in section 9
+          from the address you signed up with, and we will delete the account. Data already
+          on your device is removed by uninstalling the app.
+        </li>
+        <li>
+          <strong>Revoke provider access</strong> at any time from the provider's own
+          dashboard — that is where your keys live.
+        </li>
+      </ul>
+
+      <h2>7. Security</h2>
+      <p>
+        Keys are encrypted at rest under a non-extractable device key. Requests to
+        providers use HTTPS. One deliberate exception: AI Hub lets you connect to a
+        <strong>local or network</strong> endpoint over plain <code>http://</code> (for
+        example Ollama or LM Studio on your own machine), because those servers commonly
+        do not offer HTTPS. If you point AI Hub at an <code>http://</code> address,
+        traffic to it — including the key for that endpoint — is not encrypted in transit.
+        Only use <code>http://</code> for servers on your own machine or network.
+      </p>
+      <p>
+        No system is perfectly secure, and a device that is rooted, compromised, or shared
+        with someone who has your unlock code is outside what the app can protect against.
+      </p>
+
+      <h2>8. Changes</h2>
+      <p>
+        If this policy changes materially, the "Last updated" date above changes and the
+        new version is published at this URL before it takes effect.
+      </p>
+
+      <h2>9. Contact</h2>
+      <p>
+        Questions about this policy, or a request to delete your account:
+        <a href="mailto:getaihubapp@gmail.com">getaihubapp@gmail.com</a>
+      </p>
+
+      <footer>
+        AI Hub · All AI. One Place. · Version 1.0.0
+      </footer>
+    </main>
+  </body>
+</html>
