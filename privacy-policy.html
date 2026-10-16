@@ -1,258 +1,36 @@
-<!doctype html>
-<!--
-  Standalone privacy policy page. No build step, no external assets, no fonts or
-  scripts fetched from anywhere — open it, or drop it on GitHub Pages, and it
-  works. That matters because the Play Console needs a URL that resolves to a
-  readable policy, and a page that depends on a CDN is a page that can break.
-
-  privacy-policy.md in this folder is the SOURCE OF TRUTH. If you change wording,
-  change it there first and mirror it here, or the two will drift and the
-  published one will be the stale one.
--->
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Hub — Privacy Policy</title>
-    <style>
-      :root {
-        --ink: #2a2822;
-        --ink-soft: #5b574c;
-        --surface: #f4f3ee;
-        --card: #ffffff;
-        --accent: #c15f3c;
-        --rule: rgb(42 40 34 / 0.1);
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --ink: #f5f3ec;
-          --ink-soft: #b8b3a6;
-          --surface: #262624;
-          --card: #30302e;
-          --accent: #d5825f;
-          --rule: rgb(255 255 255 / 0.12);
-        }
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        padding: 2rem 1.25rem 4rem;
-        background: var(--surface);
-        color: var(--ink);
-        font: 16px/1.65 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        -webkit-text-size-adjust: 100%;
-      }
-      main {
-        max-width: 44rem;
-        margin: 0 auto;
-        background: var(--card);
-        border-radius: 1.25rem;
-        padding: 2rem 1.75rem 2.5rem;
-        box-shadow: 0 0 0 1px var(--rule), 0 6px 24px -8px rgb(0 0 0 / 0.12);
-      }
-      h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 0.25rem; letter-spacing: -0.02em; }
-      h2 {
-        font-size: 1.1rem;
-        margin: 2.25rem 0 0.6rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid var(--rule);
-        letter-spacing: -0.01em;
-      }
-      h2:first-of-type { border-top: 0; padding-top: 0; }
-      .updated { color: var(--ink-soft); font-size: 0.875rem; margin: 0 0 1.5rem; }
-      .lede { font-size: 1.02rem; }
-      p, li { color: var(--ink); }
-      ul { padding-left: 1.25rem; }
-      li { margin: 0.35rem 0; }
-      a { color: var(--accent); text-underline-offset: 2px; }
-      strong { font-weight: 650; }
-      code {
-        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-        font-size: 0.9em;
-        background: var(--surface);
-        padding: 0.1em 0.35em;
-        border-radius: 0.3em;
-      }
-      footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.875rem; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>AI Hub — Privacy Policy</h1>
-      <p class="updated">Last updated: 27 July 2026</p>
-
-      <p class="lede">
-        AI Hub is a "bring your own key" AI client. You connect your own AI provider
-        accounts, and the app talks to those providers directly from your phone. This
-        policy describes exactly what the app does with your data.
-      </p>
-      <p class="lede">
-        <strong>The short version:</strong> your conversations and your API keys stay on
-        your device. The only personal information that leaves it is what is needed to
-        sign you in.
-      </p>
-
-      <h2>1. What stays on your device</h2>
-      <p>
-        All of the following is stored <strong>only</strong> in AI Hub's private storage
-        on your phone. It is not uploaded to us, and we have no server that could
-        receive it:
-      </p>
-      <ul>
-        <li>Conversations, messages and their attachments</li>
-        <li>Projects, prompts, agents and knowledge snippets</li>
-        <li>Documents you import into Knowledge (read on-device; never uploaded)</li>
-        <li>
-          Provider connections and settings, usage and cost records, connection-health
-          results, custom instructions, appearance and profile preferences
-        </li>
-      </ul>
-      <p>
-        <strong>API keys.</strong> Your provider API keys are encrypted on your device
-        with AES-GCM, under a key held in your device's browser keystore that is marked
-        <strong>non-extractable</strong> — it cannot be read out of the device by the app
-        or by us. The keys are never transmitted anywhere except to the provider they
-        belong to, when you send a request to that provider.
-      </p>
-      <p>
-        <strong>Automatic cloud backup is switched off.</strong> Android's Auto Backup
-        would otherwise copy the app's data directory to your Google Drive. AI Hub
-        disables it — cloud backup and device-to-device transfer are both excluded — so
-        your conversations and your encrypted keys are not copied off the device by the
-        operating system.
-      </p>
-      <p>
-        Uninstalling AI Hub deletes all of it, including your sign-in session.
-        Reinstalling gives you a fresh, empty app and requires you to sign in again.
-      </p>
-
-      <h2>2. What leaves your device</h2>
-      <p>
-        <strong>Signing in.</strong> AI Hub uses Google Firebase Authentication. When you
-        create an account or sign in, your <strong>email address</strong> is processed by
-        Firebase, which issues an account identifier (UID) and a session token. If you
-        use "Continue with Google", Google likewise processes your sign-in. This is the
-        only personal data the app sends for its own operation. It is used solely to
-        authenticate you and to keep each account's data separate on the device.
-        Firebase's handling of it is covered by
-        <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.
-      </p>
-      <p>
-        <strong>Talking to AI providers.</strong> When you send a message, it goes
-        <strong>directly from your phone to the provider you chose</strong> (for example
-        OpenAI, Anthropic, Google, Groq, or a local server you run yourself),
-        authenticated with your own API key. It does not pass through any server of ours.
-        What that provider does with your prompt is governed by
-        <strong>your agreement with them</strong>, not by this policy — including whether
-        they retain it or use it for training. Please read the privacy policy of each
-        provider whose key you add.
-      </p>
-      <p>
-        If you enable web search, your search query is sent in the same direct way to the
-        search provider whose key you supplied.
-      </p>
-      <p>
-        <strong>Nothing else.</strong> AI Hub contains <strong>no analytics, tracking,
-        advertising or crash-reporting SDK</strong>. We do not collect usage statistics,
-        device identifiers, or any record of what you ask the AI.
-      </p>
-      <p>
-        The app also loads no content from third-party servers as it runs. Its fonts and
-        images are bundled inside the app, so simply opening AI Hub contacts nobody —
-        network requests happen only when you sign in, send a message, or run a search.
-        Links to provider documentation open in your browser, and only when you tap them.
-      </p>
-
-      <h2>3. Backups you create yourself</h2>
-      <p>
-        Settings → Backup &amp; restore writes a backup file to your device's Documents
-        folder (or wherever you choose to share it). You control that file. Two things to
-        know:
-      </p>
-      <ul>
-        <li>
-          It <strong>excludes your API keys entirely</strong>, by design, so a backup file
-          cannot be used to spend money on your accounts.
-        </li>
-        <li>
-          It is <strong>plain, unencrypted JSON and contains your conversations</strong>.
-          Treat it like any other personal document: if you copy it to cloud storage or
-          send it to someone, they can read your chats.
-        </li>
-      </ul>
-
-      <h2>4. Bug reports</h2>
-      <p>
-        If you file a bug report from the app, AI Hub pre-fills only the app version,
-        platform, and the model, provider name and error message from the most recent
-        failure. It deliberately <strong>excludes your conversation content and anything
-        key-related</strong>. Nothing is sent until you choose to send it, and you can
-        edit the text first.
-      </p>
-
-      <h2>5. Children</h2>
-      <p>
-        AI Hub is not directed at children under 13, and we do not knowingly collect
-        personal information from them.
-      </p>
-
-      <h2>6. Your control and your rights</h2>
-      <ul>
-        <li>
-          <strong>Delete your content</strong>: clear individual chats, or use Settings to
-          clear all chats. Uninstalling the app removes everything stored on the device.
-        </li>
-        <li>
-          <strong>Delete your account, in the app</strong>: Settings → Account →
-          <strong>Delete account and all data</strong>. This deletes your Firebase account
-          and its email address, and at the same time erases that account's conversations,
-          projects, prompts, agents, knowledge snippets and saved API keys from the device.
-          You confirm by typing DELETE and re-entering your password (or re-confirming with
-          Google). It takes effect immediately and <strong>cannot be undone</strong> —
-          nothing is held on a server that could be restored, so make a backup first if you
-          want to keep your chats.
-        </li>
-        <li>
-          <strong>Delete your account by email</strong>: write to the address in section 9
-          from the address you signed up with, and we will delete the account. Data already
-          on your device is removed by uninstalling the app.
-        </li>
-        <li>
-          <strong>Revoke provider access</strong> at any time from the provider's own
-          dashboard — that is where your keys live.
-        </li>
-      </ul>
-
-      <h2>7. Security</h2>
-      <p>
-        Keys are encrypted at rest under a non-extractable device key. Requests to
-        providers use HTTPS. One deliberate exception: AI Hub lets you connect to a
-        <strong>local or network</strong> endpoint over plain <code>http://</code> (for
-        example Ollama or LM Studio on your own machine), because those servers commonly
-        do not offer HTTPS. If you point AI Hub at an <code>http://</code> address,
-        traffic to it — including the key for that endpoint — is not encrypted in transit.
-        Only use <code>http://</code> for servers on your own machine or network.
-      </p>
-      <p>
-        No system is perfectly secure, and a device that is rooted, compromised, or shared
-        with someone who has your unlock code is outside what the app can protect against.
-      </p>
-
-      <h2>8. Changes</h2>
-      <p>
-        If this policy changes materially, the "Last updated" date above changes and the
-        new version is published at this URL before it takes effect.
-      </p>
-
-      <h2>9. Contact</h2>
-      <p>
-        Questions about this policy, or a request to delete your account:
-        <a href="mailto:getaihubapp@gmail.com">getaihubapp@gmail.com</a>
-      </p>
-
-      <footer>
-        AI Hub · All AI. One Place. · Version 1.0.0
-      </footer>
-    </main>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chorus — Privacy Policy | AIHUB</title><meta name="description" content="How Chorus handles account, AI provider, voice, local workspace and text recognition data. Updated 16 October 2026."><style>:root{color-scheme:light;--ink:#38291f;--muted:#786758;--accent:#a94e2b;--bg:#f6f0e9}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,Segoe UI,sans-serif}header,main,footer{max-width:840px;margin:auto;padding:30px}header{padding-bottom:0;font-size:13px;letter-spacing:.16em;color:var(--accent);font-weight:750}main{background:#fffdf9;border:1px solid #e4d5c8;border-radius:22px;margin-top:20px;margin-bottom:20px;padding:36px}h1{font-size:32px;line-height:1.2;letter-spacing:-.7px;margin:0 0 22px}h2{font-size:22px;line-height:1.4;margin:34px 0 14px}p{margin:0 0 18px}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}code{font-size:14px;background:#f1e6dd;padding:2px 5px;border-radius:5px}footer{padding-top:5px;color:var(--muted);font-size:14px}@media(max-width:600px){header{padding:24px 22px 0}main{margin:16px 12px;padding:24px 20px}h1{font-size:28px}h2{font-size:20px}footer{padding:16px 22px}}</style></head><body><header>AIHUB / CHORUS</header><main><h1>Chorus — Privacy Policy</h1>
+<p><strong>Last updated: 16 October 2026</strong></p>
+<p>Chorus – All AI, One Place (<code>com.aihub.app</code>) is provided by AIHUB. Chorus is a bring-your-own-key AI client and local workspace. This policy explains data stored by the app, information sent when you use connected services, and your controls. Contact: <strong>getaihubapp@gmail.com</strong>.</p>
+<h2>1. Your local workspace</h2>
+<p>Chorus stores saved conversations and attachments, imported document text, projects, notes, prompts, assistants, selected memories, Lens cards, Mini Tools, Council results, decision records, Radar watches, settings, and usage records in the app&#x27;s storage on your device. These records are not synced to an AIHUB workspace server. Different signed-in accounts have separate local records. Signing in on a new device does not transfer your connections or workspace.</p>
+<p>Provider and search API keys are encrypted at rest using AES-GCM and a non-extractable key held in the app&#x27;s device storage. Chorus decrypts a key when authenticating a request to its configured service. This protects stored keys; it does not make a compromised device safe or prevent the app from using a key.</p>
+<p>Android automatic cloud backup and device-to-device transfer of app data are disabled. Uninstalling the app removes its local storage. Keep a manual export if you need a recoverable copy.</p>
+<h2>2. Account sign-in</h2>
+<p>Chorus uses Google Firebase Authentication for email/password and Google sign-in. Firebase processes the account information needed to authenticate you, including your email address, account identifier and authentication credentials. Google sign-in may provide your Google profile name and image. Firebase also processes technical information such as IP addresses and user-agent information for service operation, security and abuse prevention. Password-account email verification is required before using Chorus.</p>
+<p>See <a href="https://firebase.google.com/support/privacy">Firebase&#x27;s privacy information</a> and <a href="https://policies.google.com/privacy">Google&#x27;s Privacy Policy</a>. AIHUB does not receive your Google account password.</p>
+<h2>3. AI, search and connected endpoints</h2>
+<p>When you send an AI request, Chorus sends the content needed for that task directly to your selected provider or configured gateway. This can include prompts, conversation context, images, document text, instructions, selected memories, source material and workspace records you choose to process. Council sends a question to two selected members and their answers to the reviewer. Remember Why&#x27;s optional AI action sends the records within the displayed scope to the model you select.</p>
+<p>Optional web search sends the query to your configured search service; selected results may be included in the AI context. Connection tests and model discovery contact the configured endpoint. Providers and gateways receive network information such as your IP address as part of a request. Their retention, training, billing and deletion practices are governed by their own policies and your agreement with them. A custom gateway may route your content to further providers. Check whom you connect and avoid sending information you do not want that service to process.</p>
+<p>Provider presets use HTTPS. Chorus also permits a user-configured HTTP endpoint for local or network servers. HTTP traffic, including content and credentials for that connection, is not encrypted in transit. Use HTTPS for remote connections.</p>
+<h2>4. Files, photos, camera and voice</h2>
+<p>You choose which files or images to import or share into Chorus. Document text is extracted locally. Importing content does not itself send the document to an AI provider; using it in an AI action sends the relevant text or image to the selected endpoint.</p>
+<p>Chorus Lens uses bundled Google ML Kit Latin-script text recognition on Android. Image recognition runs on the device. ML Kit can collect SDK diagnostic and usage metadata, including device/app information, installation identifiers, performance information, feature events, configuration and input/output sizes. These are distinct from uploading the photo for cloud AI. See <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit&#x27;s Android data disclosure</a>.</p>
+<p>Microphone permission is requested when you use voice input. Recorded audio is sent to a connected Groq or OpenAI transcription endpoint and the transcript becomes a draft you can review. Chorus does not keep a voice recording as part of the chat history. Sending the draft then sends the text to your chosen chat model. Listening to replies uses your device&#x27;s text-to-speech engine; that engine&#x27;s voices and network processing depend on your device settings and its provider.</p>
+<p>Camera and photo/file access support the items you explicitly capture or select. Declining microphone or camera access leaves typing and other import methods available.</p>
+<h2>5. Radar, notifications and the widget</h2>
+<p>Personal Radar requests public HTTPS pages you choose and stores local text snapshots and change excerpts. Android can repeat these requests in the background while a watch is enabled, subject to system conditions. The source website receives the request and ordinary network information. Radar does not send your AI keys to the watched website. Pause or remove watches to stop their checks; signing out suspends this account&#x27;s Android checks.</p>
+<p>Notifications are optional and show a generic prompt to review source changes. The home-screen widget uses local appearance settings and opens chat or voice; it does not itself send a conversation to an AI provider.</p>
+<h2>6. Private chats and retained records</h2>
+<p>Private chats are not saved to normal conversation history and do not use saved memories as automatic chat context. Content you submit still reaches the selected provider, which has its own retention policy. Private mode does not make provider traffic anonymous.</p>
+<p>Saved source quotes in Lens and Remember Why are retained copies. Removing an original chat or note does not automatically remove a quote already saved in another record. Delete the saved record or retained quote as well when you want to remove that copy.</p>
+<h2>7. Exports, backups and support</h2>
+<p>Exports and backups are files you control. Backups exclude provider/search API keys but contain readable, unencrypted workspace text. They are not a complete archive of all binary attachments. Anyone you share an exported file with may be able to read it. Calendar, CSV, tool and Council exports may likewise contain your content. Review files before sharing them and store them securely.</p>
+<p>Support or bug-report messages are sent only when you choose to send them using your email app or another external service. A prefilled report may contain app/platform information and recent provider/model error details. Review it before sending. If you contact AIHUB, we process the information you send to answer your request, troubleshoot or handle account deletion; do not send passwords or API keys. We keep support correspondence only as needed for those purposes and any applicable obligations.</p>
+<p>Chorus contains no advertising SDK and does not sell your conversations. Authentication and ML Kit technical data processing described above still apply; there is no separate AIHUB conversation-analytics service.</p>
+<h2>8. Deletion and your choices</h2>
+<p>You can delete saved items in the app, remove provider connections, pause Radar, revoke device permissions and revoke API keys in your provider&#x27;s dashboard. Export anything you want to keep before deletion.</p>
+<p>To delete your Chorus account, open <strong>Settings → Account → Delete Account and All Data</strong>, follow the confirmation and re-authentication steps, and complete deletion. This removes the Firebase account and that account&#x27;s local workspace from the device performing deletion. Signing in on another device does not remotely wipe that device&#x27;s local files. Uninstall Chorus there or remove its local app data as well.</p>
+<p>You can also request account deletion by emailing <strong>getaihubapp@gmail.com</strong> from the account address, as explained on the <a href="https://subhashns1988-svg.github.io/aihub-legal/delete-account.html">account deletion page</a>. We may verify ownership to protect the account. AIHUB cannot remotely retrieve local records or erase files you exported, other recipients&#x27; copies, or data retained by your selected providers; contact those services for their deletion controls. Google may retain technical records according to its applicable policies and obligations.</p>
+<h2>9. Children and policy updates</h2>
+<p>Chorus is not directed at children under 13 and AIHUB does not knowingly collect their personal information. Provider age requirements also apply.</p>
+<p>When this policy changes, we update the date and publish the revised policy here. Contact <strong>getaihubapp@gmail.com</strong> with privacy questions or requests.</p></main><footer>Chorus – All AI, One Place · com.aihub.app · <a href="mailto:getaihubapp@gmail.com">Privacy support</a></footer></body></html>

@@ -1,4 +1,4 @@
-# AI Hub — legal pages
+# Chorus — legal pages
 
 Public hosting for the two URLs the Google Play Console requires:
 
@@ -9,7 +9,7 @@ Public hosting for the two URLs the Google Play Console requires:
 
 ## Why this repo is separate, and public
 
-The AI Hub app repo is **private**. GitHub Pages served from a private repo is not
+The Chorus app repo is **private**. GitHub Pages served from a private repo is not
 publicly reachable, so Play's reviewers — and users — would get a 404 or a login
 wall where the policy should be. This repo exists purely to make those two pages
 anonymously readable, and contains nothing else: no app source, no keys, no
@@ -28,7 +28,7 @@ policy wording changes:
 Skipping step 3 means the published policy is the stale one, which is the failure
 mode worth guarding against — Play links to *this* copy.
 
-`delete-account.html` lives only here. It has to be readable by someone who has
+The account deletion wording is also maintained in `docs/delete-account.md` in the app repository; copy its rendered `delete-account.html` here when it changes. It has to be readable by someone who has
 already uninstalled the app, so it spells out the in-app steps rather than linking
 into the app.
 

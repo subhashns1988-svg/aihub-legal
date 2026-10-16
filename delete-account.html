@@ -1,166 +1,23 @@
-<!doctype html>
-<!--
-  Account deletion instructions, as its own URL.
-
-  Play asks for this separately from the privacy policy, and it has to be readable
-  by someone who has already uninstalled the app — which is why every step is
-  written out here rather than linked into the app. It must also stay reachable
-  anonymously: this page exists in a PUBLIC repo for exactly that reason.
-
-  Styling is duplicated from privacy-policy.html on purpose. These pages have no
-  build step and fetch nothing, so a shared stylesheet would be one more request
-  that can fail on the reviewer's network.
--->
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Hub — Delete your account</title>
-    <style>
-      :root {
-        --ink: #2a2822;
-        --ink-soft: #5b574c;
-        --surface: #f4f3ee;
-        --card: #ffffff;
-        --accent: #c15f3c;
-        --rule: rgb(42 40 34 / 0.1);
-        --warn-bg: #fdf1ed;
-        --warn-ink: #8c3b1f;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --ink: #f5f3ec;
-          --ink-soft: #b8b3a6;
-          --surface: #262624;
-          --card: #30302e;
-          --accent: #d5825f;
-          --rule: rgb(255 255 255 / 0.12);
-          --warn-bg: #3b2620;
-          --warn-ink: #f0b39a;
-        }
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        padding: 2rem 1.25rem 4rem;
-        background: var(--surface);
-        color: var(--ink);
-        font: 16px/1.65 -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        -webkit-text-size-adjust: 100%;
-      }
-      main {
-        max-width: 44rem;
-        margin: 0 auto;
-        background: var(--card);
-        border-radius: 1.25rem;
-        padding: 2rem 1.75rem 2.5rem;
-        box-shadow: 0 0 0 1px var(--rule), 0 6px 24px -8px rgb(0 0 0 / 0.12);
-      }
-      h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 0.25rem; letter-spacing: -0.02em; }
-      h2 {
-        font-size: 1.1rem;
-        margin: 2.25rem 0 0.6rem;
-        padding-top: 1.25rem;
-        border-top: 1px solid var(--rule);
-        letter-spacing: -0.01em;
-      }
-      h2:first-of-type { border-top: 0; padding-top: 0; }
-      .updated { color: var(--ink-soft); font-size: 0.875rem; margin: 0 0 1.5rem; }
-      .lede { font-size: 1.02rem; }
-      ul, ol { padding-left: 1.25rem; }
-      li { margin: 0.4rem 0; }
-      a { color: var(--accent); text-underline-offset: 2px; }
-      strong { font-weight: 650; }
-      .warn {
-        background: var(--warn-bg);
-        color: var(--warn-ink);
-        border-radius: 0.9rem;
-        padding: 1rem 1.1rem;
-        margin: 1.25rem 0;
-      }
-      .warn p { color: var(--warn-ink); margin: 0.35rem 0 0; }
-      .warn p:first-child { margin-top: 0; font-weight: 650; }
-      footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 0.875rem; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>AI Hub — Delete your account</h1>
-      <p class="updated">Last updated: 28 July 2026</p>
-
-      <p class="lede">
-        You can delete your AI Hub account and all of its data yourself, from inside the
-        app. This page explains how, what gets deleted, and what to do if you no longer
-        have the app installed.
-      </p>
-
-      <h2>Delete it in the app</h2>
-      <ol>
-        <li>Open AI Hub.</li>
-        <li>Open the menu (top left) and tap <strong>Settings</strong>.</li>
-        <li>Under <strong>Account</strong>, tap <strong>Delete account and all data</strong>.</li>
-        <li>Type <strong>DELETE</strong> to confirm, and enter your password — or re-confirm
-          with Google if you signed in that way.</li>
-        <li>Tap <strong>Delete my account</strong>.</li>
-      </ol>
-      <p>
-        If you signed up but never verified your email address, you are held on the
-        "Verify your email" screen and cannot reach Settings. Delete your account from
-        that screen instead: tap <strong>Delete this account</strong> near the bottom.
-      </p>
-
-      <h2>What is deleted</h2>
-      <p>Deleting your account removes, immediately:</p>
-      <ul>
-        <li>Your AI Hub account and the <strong>email address</strong> stored with it</li>
-        <li>Your conversations and messages</li>
-        <li>Your projects, prompts, agents and knowledge snippets</li>
-        <li>Your saved <strong>API keys</strong> and provider connections</li>
-        <li>Your usage and cost history, and your profile and app preferences</li>
-      </ul>
-      <p>
-        There is no retention period, because there is nothing to retain: AI Hub has no
-        server that stores your content. Your conversations and keys are held only on your
-        device, so they are erased at the moment you confirm, and the account record is
-        deleted from Google Firebase Authentication at the same time.
-      </p>
-
-      <div class="warn">
-        <p>This cannot be undone.</p>
-        <p>
-          Nothing is kept on a server, so there is no copy for us or for you to restore
-          from. If you want to keep your chats, export them first from
-          <strong>Settings → Backup &amp; restore</strong>. Backup files never contain your
-          API keys.
-        </p>
-      </div>
-
-      <h2>Your API keys with providers</h2>
-      <p>
-        Deleting your AI Hub account removes the keys stored in the app, but it does not
-        and cannot revoke them at the provider — they are your keys, held in your OpenAI,
-        Anthropic, Google, Groq or other account. If you want them disabled entirely,
-        revoke them from that provider's own dashboard.
-      </p>
-
-      <h2>If you have already uninstalled the app</h2>
-      <p>
-        Uninstalling deletes everything AI Hub stored on your device, but your account
-        record still exists. To remove it, email
-        <a href="mailto:getaihubapp@gmail.com">getaihubapp@gmail.com</a> from the address
-        you signed up with, and we will delete the account. Reinstalling the app and using
-        the in-app option above works too, and is immediate.
-      </p>
-
-      <h2>More detail</h2>
-      <p>
-        See the <a href="./privacy-policy.html">AI Hub Privacy Policy</a> for what the app
-        stores, what leaves your device, and what it never collects.
-      </p>
-
-      <footer>
-        AI Hub · All AI. One Place. · <a href="./privacy-policy.html">Privacy Policy</a>
-      </footer>
-    </main>
-  </body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Chorus — Delete Your Account | AIHUB</title><meta name="description" content="Delete your Chorus account in the app or request deletion by email. Learn what is removed and which copies need separate action."><style>:root{color-scheme:light;--ink:#38291f;--muted:#786758;--accent:#a94e2b;--bg:#f6f0e9}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 system-ui,-apple-system,Segoe UI,sans-serif}header,main,footer{max-width:840px;margin:auto;padding:30px}header{padding-bottom:0;font-size:13px;letter-spacing:.16em;color:var(--accent);font-weight:750}main{background:#fffdf9;border:1px solid #e4d5c8;border-radius:22px;margin-top:20px;margin-bottom:20px;padding:36px}h1{font-size:32px;line-height:1.2;letter-spacing:-.7px;margin:0 0 22px}h2{font-size:22px;line-height:1.4;margin:34px 0 14px}p{margin:0 0 18px}a{color:var(--accent);text-underline-offset:3px;overflow-wrap:anywhere}code{font-size:14px;background:#f1e6dd;padding:2px 5px;border-radius:5px}footer{padding-top:5px;color:var(--muted);font-size:14px}@media(max-width:600px){header{padding:24px 22px 0}main{margin:16px 12px;padding:24px 20px}h1{font-size:28px}h2{font-size:20px}footer{padding:16px 22px}}</style></head><body><header>AIHUB / CHORUS</header><main><h1>Chorus — Delete Your Account</h1>
+<p><strong>Last updated: 16 October 2026</strong></p>
+<p>Chorus – All AI, One Place (<code>com.aihub.app</code>) is provided by AIHUB. You can delete your account in the app or request deletion by email.</p>
+<h2>Delete in the app</h2>
+<ol>
+<li>Open Chorus and go to <strong>Settings</strong>.</li>
+<li>Under <strong>Account</strong>, choose <strong>Delete Account and All Data</strong>.</li>
+<li>Type <strong>DELETE</strong> and re-enter your Chorus password, or confirm with Google if that is how you signed in.</li>
+<li>Select <strong>Delete My Account</strong> and wait for confirmation.</li>
+</ol>
+<p>If your email is not verified and you cannot reach Settings, use <strong>Delete This Account</strong> on the verification screen.</p>
+<p>Deletion cannot be undone. Export anything you want to keep from <strong>Settings → Backup &amp; Restore</strong> before deleting. Exported backups exclude API keys and contain readable workspace text.</p>
+<h2>Request deletion without the app</h2>
+<p>Email <strong>getaihubapp@gmail.com</strong> from the address used for your Chorus account, with the subject <strong>Delete My Chorus Account</strong>. State that you want your Chorus account deleted. Do not send a password, API key, identity document or payment information. We may ask you to verify ownership before acting to protect the account.</p>
+<p>If you no longer control that email address, contact the same support address and explain the access problem without sending credentials. Uninstalling Chorus removes local app data from that device but does not itself delete your Firebase account; use the in-app action or email request as well.</p>
+<h2>What deletion removes</h2>
+<p>The in-app process deletes your Firebase Authentication account, including its account email and identifier, and removes that account&#x27;s local records on the device performing deletion. These records include saved chats and attachments, connections and stored keys, notes, projects, prompts, assistants, knowledge text, memories, usage records, Lens captures, Mini Tools, Councils, decision records and Radar watches. Android Radar checks are stopped and its native watch cache is cleared.</p>
+<p>AIHUB does not keep a separate cloud copy of your saved workspace. Local record removal takes effect during the in-app deletion process; the Firebase account is removed when authentication deletion succeeds. If the app reports a partial failure, follow the displayed retry or support instructions. There is no additional AIHUB retention period for a deleted local workspace or successfully deleted account record.</p>
+<p>An email deletion request removes the account record after ownership verification. We cannot remotely wipe your phone&#x27;s local files. Uninstall Chorus or remove its app data on every device where you used the account. Non-personal device preferences such as appearance can remain until app data is removed.</p>
+<h2>Copies and services outside Chorus</h2>
+<p>Account deletion does not revoke keys in provider dashboards, delete data retained by AI/search providers, remove exported backups or other files, or erase copies you shared. Revoke keys and use those services&#x27; deletion controls separately. A source quote retained inside another local record must also be deleted if you remove only its original item.</p>
+<p>Google&#x27;s authentication and ML Kit services may retain technical records under their applicable policies and obligations. Support correspondence may be retained as needed to process your request and meet applicable obligations; it is separate from the app&#x27;s local workspace. See the <a href="https://subhashns1988-svg.github.io/aihub-legal/privacy-policy.html">Chorus Privacy Policy</a> for the data handled by these services.</p>
+<p>Questions: <strong>getaihubapp@gmail.com</strong>.</p></main><footer>Chorus – All AI, One Place · com.aihub.app · <a href="mailto:getaihubapp@gmail.com">Privacy support</a></footer></body></html>
