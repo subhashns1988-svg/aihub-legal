@@ -1,6 +1,6 @@
 # Chorus — Privacy Policy
 
-**Last updated: 20 October 2026**
+**Last updated: 15 November 2026**
 
 Chorus – All AI, One Place (`com.aihub.app`) is provided by AIHUB. Chorus is a bring-your-own-key AI client and local workspace. This policy explains data stored by the app, information sent when you use connected services, and your controls. Contact: **getaihubapp@gmail.com**.
 
@@ -9,7 +9,7 @@ Chorus – All AI, One Place (`com.aihub.app`) is provided by AIHUB. Chorus is a
 - **Saved chats stay on your device.** AIHUB does not operate a server that syncs or stores your workspace. A safety report is sent to AIHUB only when you review and submit it.
 - **You choose who processes your AI requests.** Requests go directly to your selected provider or configured gateway. That service can read the content you submit and applies its own data policies.
 - **Stored API keys are encrypted.** Provider and search keys use AES-GCM encryption in device storage. Saved workspace text and manual exports are not individually encrypted by Chorus.
-- **Chats are not used to choose ads.** Chorus does not send your chat content or API keys to AdMob. Optional sponsored cards involve Google's advertising data processing, described below. Account sign-in also involves Firebase.
+- **Chats are not used to choose ads.** Chorus does not send your chat content or API keys to AdMob. Sponsored cards involve Google's advertising data processing, described below. Account sign-in also involves Firebase.
 
 Google Play's term “collected” includes information sent off your device directly to a connected service or SDK, even if AIHUB never receives it. The Data safety disclosure therefore includes more than information received by the developer. It does not mean that AIHUB uploads your entire local workspace or sells your conversations.
 
@@ -72,11 +72,11 @@ Chorus does not sell your conversations. Authentication and ML Kit technical dat
 
 ### Sponsored responses in ad-enabled builds
 
-Ad-enabled releases use Google AdMob for **Sponsored Responses**. Current releases provide a **Show Sponsored Cards** switch in Settings. An ad card is separate from the AI answer; Chorus does not send your prompts, conversations, attachments, saved memories, provider/search API keys or Chorus account ID to AdMob to choose ads. Ads are not included in AI conversation context, exports or saved answers. Private Chat does not display these cards. Build 99 (1.0.9) did not include an advertising SDK; build 101 did not provide the app-wide switch.
+Ad-enabled releases use Google AdMob for **Sponsored Responses**. In current releases sponsored cards cannot be turned off in the app; you can hide an individual card with its ✕ button. An ad card is separate from the AI answer; Chorus does not send your prompts, conversations, attachments, saved memories, provider/search API keys or Chorus account ID to AdMob to choose ads. Ads are not included in AI conversation context, exports or saved answers. Private Chat does not display these cards. Build 99 (1.0.9) did not include an advertising SDK. Build 100 and builds 102 to 105 provided a **Show Sponsored Cards** switch; build 101 and releases after build 105 do not.
 
 Google's Mobile Ads SDK may process IP addresses (which can indicate approximate location), device and advertising identifiers, diagnostics, and ad interaction information for advertising, measurement, security and fraud prevention. This processing involves Google and the advertising technology providers disclosed in the consent interface. Chorus does not request precise device location for ads. The app requests non-personalized ads; that setting does not mean that no device information is processed. See [Google's advertising privacy information](https://policies.google.com/technologies/ads) and [the Mobile Ads SDK data disclosure](https://developers.google.com/admob/android/privacy/play-data-disclosure).
 
-Where applicable, Google's consent message appears before ads can be requested. In ad-enabled builds, use **Settings → Sponsored Responses → Ad Privacy Options** to manage or withdraw consent where Google provides that form. Build 100 and releases after build 101 provide a **Show Sponsored Cards** switch. Turning it off prevents new ad requests and removes sponsored cards; build 101 does not offer this switch. Your choice is saved on this device for your signed-in account. Required consent and privacy choices remain available. Withdrawing consent does not reverse information already processed by Google. Android's advertising ID settings provide additional device controls. Deleting your Chorus account does not erase advertising records retained by Google under its own policies.
+Where applicable, Google's consent message appears before ads can be requested. In ad-enabled builds, use **Settings → Sponsored Responses → Ad Privacy Options** to manage or withdraw consent where Google provides that form. If your consent choices no longer permit ad requests, Chorus does not request ads. Required consent and privacy choices remain available. Withdrawing consent does not reverse information already processed by Google. Android's advertising ID settings provide additional device controls. Deleting your Chorus account does not erase advertising records retained by Google under its own policies.
 
 ## 8. Deletion and your choices
 
